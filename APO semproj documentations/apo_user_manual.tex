@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{User manual}
+\author{Adam Loucký, Vít Knobloch}
+\date{May 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Running the application}
+To run the application, you have to compile it first. You can use the included Makefile to do so, you will need to have \textit{arm-linux-gnueabihf-gcc} cross compiler installed on your system to do so. Inside the Makefile change the \textit{TARGET\_IP} field to IP address of an unused MZ\_APO microcomputer in the remotely accessable lab. Then use \textit{make run} command to start the app via SSH. We recommend setting the \textit{keyboard repeat rate} high and \textit{keyboard delay} to the lowest possible setting on your system for better playability before launching the program (unfortunately, the application cannot change these settings via SSH, nor can it read the scancodes directly), you can use the following commands to do so:
+\begin{verbatim}
+# set key repeat rate. delay 50 milisecond, 40 per sec
+xset r rate 50 40
+# restore key repeat rate to default. 25 per sec, 660 milisecond delay
+xset r rate
+\end{verbatim}
+
+\section{Main menu}
+When the game launches, main menu will open. Use up and down arrows to navigate the menu and Enter key to choose the currently selected option. (Alternatively you can use W and S keys to move up and down.) You can choose from 3 gamemodes:
+\begin{itemize}
+    \item Demo PC vs PC - two computers playing against each other on hard difficulty.
+    \item Player vs PC - you will control the left player and compete against computer.
+    \item Player vs Player - challenge your friends in a 1v1 match.
+\end{itemize}
+You will be asked to choose difficulty after selecting one of the gamemodes involving player.
+
+\section{Difficulty menu}
+Simply choose your preferred difficulty, your choice affects the speed of the ball, size of the sliders and in case you are playing against computer the speed and intelligence of your opponent. If you press ESC while in Difficulty menu, you will return to Main menu. When you make your choice the game starts straight away.
+
+\section{Game}
+While in game you control the sliders movement up and down. Use W and S to move the left slider and arrows up and down to control right slider. When you play against computer you always control the left slider. The color of the RGB diodes indicate who controls the corresponding slider - green means player, blue means computer.
+\par The maximal speed of the ball is limited according to chosen gamemode. The led stripe on MZ\_APO displays how much the ball sped up since the game started. When the line is full the game is at top speed.
+\par Use ESC key at any time to pause the game. Pause menu will open when you do so, another press of ESC closes it and resumes the game. Alternatively you can restart the game with the same settings or return to main menu. Restarting the game won't reset the players' score, returning to Main menu will.
+
+\section{Game over}
+When the game is over and one of the players wins, the looser is marked with red color on his RGB led. You can restart the game for a rematch or return to Main menu. Your score keeps counting as long as you don't return to Main menu.
+
+\end{document}

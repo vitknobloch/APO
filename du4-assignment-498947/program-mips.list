@@ -1,0 +1,87 @@
+
+program code
+
+
+build/program-mips:     file format elf32-tradbigmips
+
+
+Disassembly of section my_text:
+
+00404f30 <subroutine_fnc>:
+  404f30:	27bdfff0 	addiu	sp,sp,-16
+  404f34:	27a50008 	addiu	a1,sp,8
+  404f38:	24060001 	li	a2,1
+  404f3c:	24020fa3 	li	v0,4003
+  404f40:	0000000c 	syscall
+  404f44:	14e00008 	bnez	a3,404f68 <subroutine_fnc+0x38>
+  404f48:	00000000 	nop
+  404f4c:	04400008 	bltz	v0,404f70 <subroutine_fnc+0x40>
+  404f50:	00000000 	nop
+  404f54:	10400002 	beqz	v0,404f60 <subroutine_fnc+0x30>
+  404f58:	00000000 	nop
+  404f5c:	83a20008 	lb	v0,8(sp)
+  404f60:	03e00008 	jr	ra
+  404f64:	27bd0010 	addiu	sp,sp,16
+  404f68:	1000fffd 	b	404f60 <subroutine_fnc+0x30>
+  404f6c:	2402ffff 	li	v0,-1
+  404f70:	1000fffb 	b	404f60 <subroutine_fnc+0x30>
+  404f74:	2402ffff 	li	v0,-1
+
+00404f78 <toplevel_fnc>:
+  404f78:	27bdffd0 	addiu	sp,sp,-48
+  404f7c:	afbf002c 	sw	ra,44(sp)
+  404f80:	afb20028 	sw	s2,40(sp)
+  404f84:	afb10024 	sw	s1,36(sp)
+  404f88:	afb00020 	sw	s0,32(sp)
+  404f8c:	2410005f 	li	s0,95
+  404f90:	27b10018 	addiu	s1,sp,24
+  404f94:	3c120041 	lui	s2,0x41
+  404f98:	1000000a 	b	404fc4 <toplevel_fnc+0x4c>
+  404f9c:	26526140 	addiu	s2,s2,24896
+  404fa0:	24040001 	li	a0,1
+  404fa4:	02402825 	move	a1,s2
+  404fa8:	24060002 	li	a2,2
+  404fac:	24020fa4 	li	v0,4004
+  404fb0:	0000000c 	syscall
+  404fb4:	14e0001d 	bnez	a3,40502c <toplevel_fnc+0xb4>
+  404fb8:	00000000 	nop
+  404fbc:	04400015 	bltz	v0,405014 <toplevel_fnc+0x9c>
+  404fc0:	2402ffff 	li	v0,-1
+  404fc4:	00002025 	move	a0,zero
+  404fc8:	0c1013cc 	jal	404f30 <subroutine_fnc>
+  404fcc:	00000000 	nop
+  404fd0:	1840000f 	blez	v0,405010 <toplevel_fnc+0x98>
+  404fd4:	00021600 	sll	v0,v0,0x18
+  404fd8:	00021603 	sra	v0,v0,0x18
+  404fdc:	1050fff0 	beq	v0,s0,404fa0 <toplevel_fnc+0x28>
+  404fe0:	a3a20018 	sb	v0,24(sp)
+  404fe4:	24040001 	li	a0,1
+  404fe8:	02202825 	move	a1,s1
+  404fec:	24060001 	li	a2,1
+  404ff0:	24020fa4 	li	v0,4004
+  404ff4:	0000000c 	syscall
+  404ff8:	14e0000e 	bnez	a3,405034 <toplevel_fnc+0xbc>
+  404ffc:	00000000 	nop
+  405000:	0441fff1 	bgez	v0,404fc8 <toplevel_fnc+0x50>
+  405004:	00002025 	move	a0,zero
+  405008:	10000002 	b	405014 <toplevel_fnc+0x9c>
+  40500c:	2402ffff 	li	v0,-1
+  405010:	00001025 	move	v0,zero
+  405014:	8fbf002c 	lw	ra,44(sp)
+  405018:	8fb20028 	lw	s2,40(sp)
+  40501c:	8fb10024 	lw	s1,36(sp)
+  405020:	8fb00020 	lw	s0,32(sp)
+  405024:	03e00008 	jr	ra
+  405028:	27bd0030 	addiu	sp,sp,48
+  40502c:	1000fff9 	b	405014 <toplevel_fnc+0x9c>
+  405030:	2402ffff 	li	v0,-1
+  405034:	1000fff7 	b	405014 <toplevel_fnc+0x9c>
+  405038:	2402ffff 	li	v0,-1
+
+program data
+
+
+build/program-mips:     file format elf32-tradbigmips
+
+Contents of section my_data:
+ 416140 5c5f0000                             \_..            

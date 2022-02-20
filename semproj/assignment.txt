@@ -1,0 +1,13 @@
+Team: knoblvit, louckada
+
+Hra PONG
+
+Módy Player vs PC, PC vs PC, Player vs Player
+
+Výstup na LCD display, 
+indikátor rychlosti pohybu míčku na řádce LED,
+indikátor života/smrti hráče na RGB LED
+
+Počítání skóre, možnost pozastavení hry, grafické menu
+
+Vstup z otočných voličů/klávesnice (podle práce na dálku / zapůjčení přípravku)
